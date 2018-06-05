@@ -11,11 +11,10 @@ public class Principal {
 
     public static void setFile(File f) throws FileNotFoundException {
         
-     // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-      //  this.f = f;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         Scanner sc = new Scanner(f);
         while (sc.hasNextLine()){
-            System.out.println(sc.nextLine());
+            //System.out.println(sc.nextLine());
             JOptionPane.showMessageDialog(null, "deu");
         }
     }
