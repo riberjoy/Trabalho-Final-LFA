@@ -95,6 +95,7 @@ public class JFrame_Importacao extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("static-access")
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
        Principal p = new Principal();
         
@@ -116,22 +117,24 @@ public class JFrame_Importacao extends javax.swing.JFrame {
 	int verificacao = arq.showSaveDialog(new JFrame());
        
        if(verificacao !=1 ){           
-           this.dispose();
-            JFrame_Algoritmos formBase = new JFrame_Algoritmos();
-            formBase.setLocationRelativeTo(null);
-            //formBase.setVisible(true);
-           try {
-               p.setFile(f);
-           } catch (FileNotFoundException ex) {
+           try{
+                this.dispose();
+                JFrame_Algoritmos formBase = new JFrame_Algoritmos();
+                formBase.setLocationRelativeTo(null);
+                formBase.setVisible(true);
+                p.setFile(f);
+           }
+           catch (FileNotFoundException ex) {
                Logger.getLogger(JFrame_Importacao.class.getName()).log(Level.SEVERE, null, ex);
            }
+           
        }else{
            JOptionPane.showMessageDialog(null, "Nenhum arquivo foi escolhido");
        }        
     }//GEN-LAST:event_btnPesquisaActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        this.dispose();        
+       // this.dispose();        
     }//GEN-LAST:event_btnSairActionPerformed
 
     /**
