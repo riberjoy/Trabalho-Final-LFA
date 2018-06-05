@@ -6,8 +6,11 @@
 package visao;
 import java.awt.Color;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -93,7 +96,8 @@ public class JFrame_Importacao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
-       
+       Principal p = new Principal();
+        
        FileNameExtensionFilter filtro = new FileNameExtensionFilter("Arquivo DAT (.dat)", "dat");
        String dBase = System.getProperty("user.home")+"/Desktop";
        File dir = new File(dBase);
@@ -115,8 +119,12 @@ public class JFrame_Importacao extends javax.swing.JFrame {
            this.dispose();
             JFrame_Algoritmos formBase = new JFrame_Algoritmos();
             formBase.setLocationRelativeTo(null);
-            formBase.setVisible(true);
-            Principal.setFile(f);
+            //formBase.setVisible(true);
+           try {
+               p.setFile(f);
+           } catch (FileNotFoundException ex) {
+               Logger.getLogger(JFrame_Importacao.class.getName()).log(Level.SEVERE, null, ex);
+           }
        }else{
            JOptionPane.showMessageDialog(null, "Nenhum arquivo foi escolhido");
        }        
