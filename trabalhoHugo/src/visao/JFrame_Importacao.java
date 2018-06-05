@@ -12,6 +12,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import principal.Principal;
+
 
 public class JFrame_Importacao extends javax.swing.JFrame {
 
@@ -104,12 +106,9 @@ public class JFrame_Importacao extends javax.swing.JFrame {
        
        //arq.showOpenDialog(this);
        File f = arq.getSelectedFile();
-       
-       
+              
        /* Exibe um JFileChooser para abertura de arquivo
-	 * Retorna um inteiro que indica se o usuário
-	 * selecionou um arquivo
-	 */
+          Retorna um inteiro que indica se o usuário selecionou um arquivo*/
 	int verificacao = arq.showSaveDialog(new JFrame());
        
        if(verificacao !=1 ){           
@@ -117,6 +116,7 @@ public class JFrame_Importacao extends javax.swing.JFrame {
             JFrame_Algoritmos formBase = new JFrame_Algoritmos();
             formBase.setLocationRelativeTo(null);
             formBase.setVisible(true);
+            Principal.setFile(f);
        }else{
            JOptionPane.showMessageDialog(null, "Nenhum arquivo foi escolhido");
        }        

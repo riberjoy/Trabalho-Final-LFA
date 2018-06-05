@@ -26,6 +26,7 @@ public class BFS extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -54,6 +55,10 @@ public class BFS extends javax.swing.JFrame {
         });
 
         brOrdemCrescIDs.setText("Ordem crescente de ids que rotulam os vértices");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, btnVisitar, org.jdesktop.beansbinding.ELProperty.create(""), brOrdemCrescIDs, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         brOrdemCrescIDs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brOrdemCrescIDsActionPerformed(evt);
@@ -66,6 +71,9 @@ public class BFS extends javax.swing.JFrame {
         jScrollPane2.setViewportView(ctOrdVisitada);
 
         brOrdemCrescPeso.setText("Ordem crescente por peso de aresta");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, btnVisitar, org.jdesktop.beansbinding.ObjectProperty.create(), brOrdemCrescPeso, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
 
         btnVisitar.setText("Visitar");
         btnVisitar.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +159,8 @@ public class BFS extends javax.swing.JFrame {
 
         getAccessibleContext().setAccessibleDescription("");
 
+        bindingGroup.bind();
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -221,5 +231,6 @@ public class BFS extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblTitulo;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
