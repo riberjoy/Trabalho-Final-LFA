@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Principal {
-    
-    static  File f ;
 
     public Principal(File f) throws FileNotFoundException {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
