@@ -114,7 +114,7 @@ public class Prim extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnEncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncerrarActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnEncerrarActionPerformed
 
     /**

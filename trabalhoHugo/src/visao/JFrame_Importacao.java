@@ -118,7 +118,7 @@ public class JFrame_Importacao extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisaActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        this.dispose();        
+        System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
     public static void main(String args[]) {
