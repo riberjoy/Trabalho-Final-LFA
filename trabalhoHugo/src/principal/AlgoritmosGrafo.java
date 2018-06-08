@@ -16,15 +16,25 @@ class BFS{
     
     public int[] getVisitados() {
         List<Integer> vertices = new ArrayList<Integer>(0);
+        List<Integer> vertAlca = new ArrayList<Integer>(0);
+        int i=0;
         
         vertices.add(partida);
-        //Como marcar como visitado?
-//        while(vertices.size() == 0){
-//            
-//        }
-        
-        
-        
+        vertAlca.add(partida);
+        while(vertices.size() == 0){
+            i = partida;
+            vertices.remove(0);
+            for(int j=0 ; j< matriz.length; j++){
+               if(matriz[i][j] != 0){
+                   vertices.add(j);
+                   vertAlca.add(j);
+               }
+            }
+        }
+        System.out.println(vertices);
+        for(int j=0; j< vertices.size(); j++){
+            visitados[j] = vertices.get(j);
+        }
         return visitados;
     }   
 }
@@ -39,9 +49,26 @@ class DFS{
     }
     
     public int[] getVisitados() {
+        List<Integer> vertices = new ArrayList<Integer>(0);
+        List<Integer> vertAlca = new ArrayList<Integer>(0);
+        int i=0;
         
-        
-        
+        vertices.add(partida);
+        vertAlca.add(partida);
+        while(vertices.size() == 0){
+            i = partida;
+            vertices.remove(vertices.size()-1);
+            for(int j=0 ; j< matriz.length; j++){
+               if(matriz[i][j] != 0){
+                   vertices.add(j);
+                   vertAlca.add(j);
+               }
+            }
+        }
+        System.out.println(vertices);
+        for(int j=0; j< vertices.size(); j++){
+            visitados[j] = vertices.get(j);
+        }
         return visitados;
     } 
 }
