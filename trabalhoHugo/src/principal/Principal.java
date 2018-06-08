@@ -48,17 +48,19 @@ public class Principal {
         float[][] auxM = new float[aux][aux];
         
         for(int i=0; i<cont; i++){
-            auxM[(v1.get(i))-1][(v2.get(i))-1]= peso.get(i);
-            auxM[(v2.get(i))-1][(v1.get(i))-1]= peso.get(i);
+            auxM[v1.get(i)-1][v2.get(i)-1]= peso.get(i);
+            auxM[v2.get(i)-1][v1.get(i)-1]= peso.get(i);
         }
             
-        for(int i=0; i<cont; i++){
-            for(int j=0; j<cont; j++){
-                System.out.println(auxM[i][j]);
+        for(int i=0; i<aux; i++){
+            for(int j=0; j<aux; j++){
+                System.out.print(auxM[i][j] + "\t");
             }
+            System.out.println("");
         }
         return Principal.matriz = auxM;
     } 
+    
     public static float[][] getMatriz(){
         return matriz;
     }  
