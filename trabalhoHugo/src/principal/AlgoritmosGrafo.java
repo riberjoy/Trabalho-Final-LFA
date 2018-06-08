@@ -1,6 +1,9 @@
 
 package principal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class BFS{
     int i, partida;
     float[][] matriz = new float[i][i];
@@ -12,6 +15,13 @@ class BFS{
     }
     
     public int[] getVisitados() {
+        List<Integer> vertices = new ArrayList<Integer>(0);
+        
+        vertices.add(partida);
+        //Como marcar como visitado?
+//        while(vertices.size() == 0){
+//            
+//        }
         
         
         
